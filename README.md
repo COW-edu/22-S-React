@@ -12,9 +12,6 @@
       <img  src="https://avatars.githubusercontent.com/u/106325839?v=4"  width="100px;"  alt=""/>
     </td>
     <td  align="center">
-      <img  src="https://avatars.githubusercontent.com/u/101553874?v=4"  width="100px;"  alt=""/>
-    </td>
-    <td  align="center">
       <img  src="https://avatars.githubusercontent.com/u/96576724?v=4"  width="100px;"  alt=""/>
     </td>
     <td  align="center">
@@ -25,11 +22,6 @@
   <td align="center">
     <a href="https://github.com/5uhwann">
       <div>수환</div>
-    </a>
-  </td>
-  <td align="center">
-    <a href="https://github.com/2SEONGA">
-      <div>성아</div>
     </a>
   </td>
   <td align="center">
@@ -205,3 +197,10 @@
 | Team 지은 | [team지은-1주차](https://github.com/MJU-Coin/22-S-React/tree/main/1-week/team_jieun)| [team지은-2주차](https://github.com/MJU-Coin/22-S-React/tree/main/2-week/team_jieun)| [team지은-3주차](https://github.com/MJU-Coin/22-S-React/tree/main/3-week/team_jieun)| [team지은-4주차](https://github.com/MJU-Coin/22-S-React/tree/main/4-week/team_jieun)|
 | Team 보겸 | [team보겸-1주차](https://github.com/MJU-Coin/22-S-React/tree/main/1-week/team_bokyeom)| [team보겸-2주차](https://github.com/MJU-Coin/22-S-React/tree/main/2-week/team_bokyeom)| [team보겸-3주차](https://github.com/MJU-Coin/22-S-React/tree/main/3-week/team_bokyeom)| [team보겸-4주차](https://github.com/MJU-Coin/22-S-React/tree/main/4-week/team_bokyeom)|
 | Team 민수 | [team민수-1주차](https://github.com/MJU-Coin/22-S-React/tree/main/1-week/team_minsu)| [team민수-2주차](https://github.com/MJU-Coin/22-S-React/tree/main/2-week/team_minsu)| [team민수-3주차](https://github.com/MJU-Coin/22-S-React/tree/main/3-week/team_minsu)| [team민수-4주차](https://github.com/MJU-Coin/22-S-React/tree/main/4-week/team_minsu)|
+
+
+### 토이 프로젝트
+![TodoMVC](https://todomvc.com/site-assets/logo.svg)
+
+- 프로젝트 주제 : Todo List
+- 프로젝트 가이드 : <a href="https://coin-on-web.notion.site/coin-on-web/22-S-React-project-Guide-86bf562e6e554ccdad50bef66f2fd150/" target="_blank">가이드 노션</a>
