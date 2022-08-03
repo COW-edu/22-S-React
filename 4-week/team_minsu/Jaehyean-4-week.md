@@ -152,3 +152,73 @@ export default useFetch;
 ```
 
 위의 예시에서는 하나의 훅만을 사용했지만 여러개의 묶음으로도 응용할 수 있다.
+
+## Event
+
+컴퓨터 프로그램에서 사용자에 의해 일어나는 사건이며 이를 처리하는 것이 바로 event handling이다.  자바 스크립트 dom에서의 이벤트 처리 방식과 리액트에서의 이벤트 처리는 사실 크게 다르지는 않다. 어쨋거나 두 방식 모두 js문법이 이용되긴 하기 때문이다. 두 코드를 보며 직접 비교해보자.
+
+```jsx
+DOM의 event
+<button onclick="activate()">
+	Activate
+</button>
+```
+
+```jsx
+리액트의 event
+<button onClick={activate}
+	Active
+</button>
+```
+
+두 코드 모두  버튼에 클릭 이벤트가 발생하였을 때 activate라는 이름의 함수가 발동되게 짜여진 코드이다.  이 둘의 차이는 onClick과 onclick처럼 첫글자의 시작은 소문자, 이후는 대문자로 시작하는 카멜 표기법을 사용해 이벤트를 정의하는지, 파스칼 표기법에 의해서 작성되는지와 함수를 문자열로만 나타내는지, 그 기능을 다 하도록 ()까지 붙이는지정도의 차이가 있다.
+
+ 
+
+### 함수형 컴포넌트를 이용한 이벤트 헨들링
+
+```jsx
+function Toggle(props) {
+	const [isToggleOn, setIsToggleOn] = useState(true);
+
+// 방법 1. 함수안에 함수로 정의
+function handleClick() {
+	setIsToggleOn((isToggleOn) => !(isToggleOn);
+}
+//방법 2. arrow function을 사용하여 정의 
+const handleClick = () => {
+	setIsToggleOn((isToggleOn) => !isToggleOn);
+}
+return (
+	<button onClick={handClick}.
+		{isToggleOn ? "켜짐" : "꺼짐"}
+	</button>
+);
+}
+```
+
+(+)
+
+ !( 함수식 A)은 함수식 A의 논리적 의미를 반전시킨 함수이다. 
+
+### Argument
+
+함수에 전달할 내용, 이벤트 핸들러에 전달할 데이터를 부르는 용어로 간단하게 하면 이벤트에 대한 상호작용으로 데이터가 반환되는 과정에서 전달받는 데이터가 예시로 존재한다.
+
+함수형 컴포넌트에서는 다음과 같이 Argument를 전달받는다.
+
+```jsx
+function MyButton(props) {
+	const handleDelete = (id, event) => {//파라미터로써 id와 이벤트의 
+		console.log(id, event..target);//종류를 받는다
+	};
+	
+	return(//이에 대하여 handleDelete에다가 event와 1을 매개변수로 삼는
+		<button onClick={(event) => handleDelete(1, event)}>
+			삭제하기//함수를 호출하는 html요소를 반환한다.
+		</button>
+	);
+};
+```
+
+.
