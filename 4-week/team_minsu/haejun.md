@@ -1,22 +1,3 @@
-# Team 민수
-
-4주차 [RandomBitFlip]
-
-Mentor : 김민수
-
-Member : 이상연 홍진서 서제현 백해준
-
-컴포넌트는 두가지로 나뉘어진다.
-
-### Function Component
-- state 사용 불가
-- Lifecycle에 따른 기능 구현 불가.
-- hook 으로 이러한 한계 극복
-### Class Component
-- 생성자에서 state 정의
-- setState() 함수를 통해 state 업데이트
-- Lifecycle methods 제공
-
 # State and Lifecycle
 
 ## state
@@ -59,20 +40,27 @@ Member : 이상연 홍진서 서제현 백해준
 
 ### constructor
 
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b2e235c1-c16b-4105-a9e8-87f479b5527f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220726%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220726T124318Z&X-Amz-Expires=86400&X-Amz-Signature=e2fe94eda6b47f033b02978cfee60418307b8077ce2e278ceb8a95e25c2fa58b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
 - 모든 class component는 constructor(생성자)라는 함수를 가지고 있다
 - this.state가 현재 component의 상태를 정의하는 부분이다
 - class component의 경우 state를 생성자에서 정의한다
 
 ### super
 
-Constructor 내부에서 this.props로 접근하기 위해서 super(props)를 하는것
+**Constructor 내부에서 this.props로 접근하기 위해서 super(props)를 하는것**
 
 ### setState
 
 - component rendering과 관련이 있기에 직접 수정하면 의도대로 작동을 안할수도 있다
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a5e4a59e-d9a1-4353-a078-6f3e2397678b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220726%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220726T124339Z&X-Amz-Expires=86400&X-Amz-Signature=c7e68c3c6b977d5164e0d1450810775ccb6e020a225135bbe3a6badaa8160b9e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
 - setState함수를 사용하여 state를 수정할 수 있다
 
 ## Life cycle(생명주기)
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3715d731-5976-477c-b972-2b86b0ae7832/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220726%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220726T124355Z&X-Amz-Expires=86400&X-Amz-Signature=8d6a689e1cedff0ac279ce6b5720988b56bb16d50ca25fd1c6f3d4ae4a1a8e62&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 ### Mount(출생)
 
@@ -118,9 +106,175 @@ Constructor 내부에서 this.props로 접근하기 위해서 super(props)를 �
 
 # Hooks
 
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b60e3aa3-991b-4fc1-abf6-0bad8eb4e120/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220726%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220726T124417Z&X-Amz-Expires=86400&X-Amz-Signature=139addbb5973a69fe06520bc6aca0e31654151d93ee752bb712f850f917e0b5c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- Hooks를 통해 Class Component에서만 가능했던 기능을 모두 사용할 수 있게 됨
+- 원래 존재한 어떤 기능에 끼어 들어가 같이 수행되게 함
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9944bfb9-4034-416d-aac8-c09d7ca33e38/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220726%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220726T124431Z&X-Amz-Expires=86400&X-Amz-Signature=4e7ff939a19f02fa444e4a38287a4e0cb4748456c80f135cfcc90c8e88ef9db6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- 함수 컴포넌트안에 Hooks을 걸어 원할 때 관련 함수를 사용할 수 있게 함
+- 각 함수들은 모두 use로 시작함 (Hooks을 나타냄)
+
+## useState
+
+- state를 사용하기 위한 Hook
+- 함수 컴포넌트에서는 state를 사용하지 않기에 useState를 통해 사용함
+
+### useState사용법
+
+```jsx
+const [변수명, set함수명] = useState(초기값);
+```
+
+### useState예시
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b95399e8-c277-4fd0-9325-6031f0aaf740/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220726%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220726T124450Z&X-Amz-Expires=86400&X-Amz-Signature=03ca26badb957c21f4722706d8a947abb3ca6a303546084a3436993d8e6d9c4c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- 변수명 = count      set함수명 = setCount
+- 초기값은 0<<
+- count 값이 변경되면 컴포넌트값이 변경되며 재랜더링 되기에 화면에 변경값이 나오게 된다
+- useState에는 변수 각각에 대해 set함수가 따로 존재한다
+
+## useEffect
+
+- side effect를 수행하기 위한 Hook
+- effect에 관한 작업들은 다른 컴포넌트에 영향을 미칠 수 있고 렌더링  중에는 작업이 완료될 수 없기에 side로 실행시키겠다는 의미에서 side effect를 사용하고 이를 실행할 수 있게 해주는 Hook이 useEffect이다
+- mount에 사용되는 함수들을 하나로 통합해서 기능을 제공함
+- return으로 받는 것이 life cycle의 unmount와 역할이 같다 (return 안에 있는 것이 unmount되기 전에 실행 됨)
+
+### side effect
+
+- react에서의 side effect는 부작용이 아닌 효과, 영향으로 쓰임
+- effect : 서버에서 데이터를 받아오거나 수동으로 DOM을 변경하는 작업 등을 의미
+
+### useEffect() 사용법
+
+```jsx
+useEffect(이펙트 함수, 의존성 배열);
+```
+
+의존성 배열 :  이 effect가 의존하고 있는 배열, 배열 안에 있는 값이 변경되면 effect 함수가 실행 됨
+
+### Effect함수가 실행되는 경우
+
+- 처음 컴포넌트가 렌더링 된 이후
+- 업데이트 인한 재렌더링 이후
+
+### Effect함수 실행 조정하기
+
+```jsx
+useEffect(이펙트 함수, []);
+```
+
+- Effect function을 mount와 unmount시에 단 한 번씩만 실행되게 하는 방법이다
+- 의존성 배열에 빈 배열을 넣음으로서 실행을 조절할 수 있다
+    - 해당 effect가 props나 state에 있는 어떤 것도 의존하지 않기에 여러번 실행되지 않음
+
+```jsx
+useEffect(이펙트 함수);
+```
+
+- 의존성 배열을 생략하면 컴포넌트가 업데이트될 때마다 호출됨
+
+### useEffect 예제
+
+```jsx
+useEffect(() => {
+	//의존성 배열에 따라 실행되는 것들
+	...
+	return () => {
+	// 컴포넌트가 마운트 해제되기 전에 실행되는 것들
+	...
+	}
+}, [의존성 변수1, 의존성 변수2, ...]);
+```
+
+## useMemo
+
+- Memoized value를 리턴하는 Hook
+
+### Memoized value
+
+- Memoization
+    - 최적화를 위해서 사용
+    - 연산량이 많이 드는 호출 결과를 저장해두었다가 같은 입력값으로 함수를 호출하면 새로 함수를 호출하지 않고 이전에 저장해둔 함수 결과를 바로 반환
+- Memoization된 결과 값을 Memoized value라고 한다
+
+### useMemo 사용법
+
+```jsx
+const memoizedValue = useMemo(
+	() => {
+		// 연산량이 높은 작업을 수행하여 결과를 반환
+		return computeExpensiveValue(의존성 변수1, 의존성 변수2);
+	},
+	[의존성 변수1, 의존성 변수2]
+);
+```
+
+- 의존성 배열에 있는 값이 변했을 때만 결과값을 반환하고 그렇지 않다면 기존 값을 그대로 반환
+- useMemo로 전달되는 함수는 렌더링이 이루어지는 동안 실행된다 (sideEffect에서 이루어 지는 것들이 useMemo에서 실행되면 안되는 이유)
+- 의존성 배열을 넣지 않으면 매 렌더링마다 함수가 실행됨으로 useMemo의 의미가 없어진다
+- 의존성 배열이 빈 배열일 경우 mount될 때만 호출이 된다
+
+## useCallback
+
+- useMemo와 유사하지만 값이 아닌 함수를 반환한다
+
+### useCallback 사용법
+
+```jsx
+const memoizedCallback = useCallback(
+	() => {
+		doSomething(의존성 변수1, 의존성 변수2);
+	},
+	[의존성 변수1, 의존성 변수2]
+);
+```
+
+- useMemo와 마찬가지로 함수와 의존성 배열을 parameter로 받음 (parameter로 받는 함수를 callback이라고 함)
+- 의존성 변수가 하나라도 변하면 callback함수를 반환함
+
+## useRef
+
+- Reference를 사용하기 위한 Hook
+- 내부의 데이터가 변경되어도 별도로 알리지 않음
+    - Callback ref로 알 수 있다
+
+### Reference
+
+- 특정 컴포넌트에 접근할 수 있는 객체
+- Reference에서 사용하는 current라는 속성은 현재 reference하고 있는 Element이다.
+
+### useRef 사용법
+
+```jsx
+const refContainer = useRef(초깃값);
+```
+
+- 초깃값을 넣으면 해당 초깃값으로 초기화된 reference객체를 반환
+    - ex) 초깃값이 null이라면 current값이 null인 객체가 반환됨
+- mount 해제 전까지 유지됨
+- 변경 가능한 current 속성을 가진 상자
+
+## Hook의 규칙
+
+- Hook은 최상위 레벨에서만 호출해야 한다
+    - 반복문이나 조건문, 중첩된 함수내에서 호출하면 안됨
+    - 컴포넌트가 렌더링될 때마다 매번 같은 순서로 호출되어야 됨(useState와 useEffect를 올바르게 호출해서 state를 올바르게 관리하기 위해서)
+
+
+# Hooks
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b60e3aa3-991b-4fc1-abf6-0bad8eb4e120/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220728T103314Z&X-Amz-Expires=86400&X-Amz-Signature=430f644c7ab2c5258c0b5cfd8b30bc4fe41b67c0c35e1963b60c1348a9c530c5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
 - Hooks를 통해 Class Component에서만 가능했던 기능을 함수 컴포넌트에서도 사용할 수 있게 됨
 - 함수 컴포넌트는 렌더링 될 때마다 내부의 것들을 다시 계산해야 하기에 Hooks가 필요하다
 - 원래 존재한 어떤 기능에 끼어 들어가 같이 수행되게 함
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9944bfb9-4034-416d-aac8-c09d7ca33e38/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220728T103327Z&X-Amz-Expires=86400&X-Amz-Signature=f0f9a3953c5c3a2ac78cdcd75a99f1724593d3d18ed65fb9e106e13296aecf0e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
 - 함수 컴포넌트안에 Hooks을 걸어 원할 때 관련 함수를 사용할 수 있게 함
 - 각 함수들은 모두 use로 시작함 (Hooks을 나타냄)
 
@@ -143,16 +297,15 @@ Constructor 내부에서 this.props로 접근하기 위해서 super(props)를 �
 ```jsx
 const [변수명, set함수명] = useState(초기값);
 ```
-- state함수에 초기값을 넣듯 useState(초기값) 설정 후, 리턴값으로 변수명과 set함수명을 적어준다.
 
 ### useState예시
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b95399e8-c277-4fd0-9325-6031f0aaf740/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220728T103351Z&X-Amz-Expires=86400&X-Amz-Signature=3817397a4451c35b50721048433282b39f8ae360f790820369c222c10d31c125&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- 변수명 = count      set함수명 = setCount
+- 초기값은 0
 - count 값이 변경되면 컴포넌트값이 변경되며 재 랜더링 되기에 화면에 변경값이 나오게 된다
 - useState에는 변수 각각에 대해 set함수가 따로 존재한다
-
-### 클래스 component와 같은 점
-- setState 함수를 호출해서 state가 업데이트 되고, 이후 component가 재 랜더링 되는 과정과 같다.
-### 클래스 component와 다른 점
-- setState 함수 하나를 사용해서 모든 State값을 업데이트 했지만, hook을 이용하면 변수 각각에 대해 set함수가 따로 존재한다.
 
 ## useEffect
 
@@ -346,256 +499,3 @@ const refContainer = useRef(초깃값);
 ## Custom Hook
 
 - 여러 컴포넌트에서 반복해서 사용되는 로직을 hook으로 만들기 위해 사용
-- 여느 큰 프로그램이 그렇듯이 리액트로 아주 긴 코드의 컴포넌트를 작성하게 된다면 여러개의 훅을 사용하게 될 것이다. 당연하게도 그중에서는 중복되는 코드가 여러 컴포넌트에 걸쳐서 존재할 것이다. 커스텀 훅은 중복된는 코드를 하나의 로직으로 묶어 필요할 때 import하여 사용할 수 있게 해주는 기능이다. 커스텀 훅 역시 함수와 같이 작성하는데 이름을 짓는 방식은 자유롭되 이름앞에 use+대문자의 규칙은 여전히 같다.
-
-# Handling Event
-
-### Handling Event 의 뜻
-
-- event : 사건
-- handling evnet : 사건을 처리하는 것
-
-## DOM과 React에서 Event의 차이점
-
-### DOM의 Event
-
-```jsx
-<button onclick = "activate()">
-	Activate
-</button>
-```
-
-- button이 onclick되면 activate함수를 호출한다
-
-### React의 Event
-
-```jsx
-<button onClick = {activate}>
-	Activate
-</button>
-```
-
-- 카멜 표기법을 사용한다
-- React에서는 함수 그대로 전달한다
-
->> 표기법과 함수를 전달하는 방식이 다르다
-
-### Event Handler (Event Listener)
-
-- 어떤 사건이 발생하면, 사건을 처리하는 역할
-
-### 예제 - class component
-
-```jsx
-class Toggle extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = { isToggleOn: true };
-		
-		this.handleClick = this.handleClick.bind(this);
-		//bind를 사용한 부분
-	}
-
-	handleClick() {
-		this.setState(prevState => ({
-			isToggleOn: !prevState.isToggleOn
-		}));
-	}
-	//handleClick을 정의하는 부분	
-원
-	render() {
-		return (
-			<button onClick={this.handleClick}>
-				{this.state.isToggleOn ? "켜짐" : "꺼짐"}
-			</button>
-		);
-	}
-}
-```
-
-- isToggleOn이라는 Boolean 변수를 통해 현재 상태를 True로 지정해줌
-- handleClick이 Event Handler
-- this는 해당하는 컴포넌트 클래스를 가리키는데 handleClick함수에서는 this가 무엇도 가리키지 않는다. 이를 해결하기 위해 bind를 사용한다.
-
-### Bind
-
-- bind를 사용해 this.handleClick에 대입해준다
-- bind안하면 global scope에서 호출됨 —> undefined됨
-
-```jsx
-render() {
-		return (
-			<button onClick={() => this.handleClick()}>
-        {/* 원래는 <button onClick={this.handleClick}>이였다 */}
-				{this.state.isToggleOn ? "켜짐" : "꺼짐"}
-			</button>
-		);
-	}
-```
-
-- render안에서 Arrow function으로도 bind사용이 가능하다
-
-### 예제 - function component
-
-```jsx
-function Toggle(props) {
-	const [isToggleOn, setIsToggleOn] = useState(true);
-
-	function handleClick() {
-		setIsToggleOn((isToggleOn) => !isToggleOn);
-	}
-
-	return (
-		<button onClick={handleClick}
-			{isToggleOn ? "켜짐" : "꺼짐"}
-		</button>
-	);
-}
-```
-
-- 함수 안에 함수를 넣으면 bind 된다
-- event handler는 this에 넣지않고 바로 onclick에 넣으면 된다
-
-### Event Handler에 Arguments 전달하기
-
-- Arguments : Event Handler(함수)에 전달(주장)할 데이터
-- Parameter : 매개변수, Arguments와 비슷
-    - 특정 사용자의 id를 매개변수로 전달해서 정해진 작업을 수행하는 등의 역할을 가짐
-
-### 예제
-
-```jsx
-function MyButton(props) {
-  const handleDelete = (id, event) => {
-    console.log(id, event.target);
-  };
-
-  return (
-    <button onClick={(event) => this.handleDelete(1, event)}>
-      삭제하기
-    </button>
-  );
-}
-```
-
-- 첫번째 매개변수로는 id, 두번째 매개변수로는 event를 받는다.
-- 화살표 함수를 사용하면 bind를 사용하지 않아도 된다.
-
-# Conditional Rendering
-
-- 어떠한 조건에 따라서 렌더링이 달라지는 것
-    
-    =조건부 렌더링(Conditional Rendering)
-    
-
-### 예제
-
-```jsx
-function Greeting(props) {
-	const isLoggedIn = props.isLoggedIn;
-
-	if (isLoggedIn) {
-		return <UserGreeting />
-	}
-	return <GuestGreeting />;
-}
-```
-
-- props로 들어오는 isLoggin에 값에 따라서 true면 UserGreeting함수를 돌려주는 Greeting함수
-
-### truthy와 falsy
-
-- JS에서 true와 false로 처리되는 것들이다
-
-
-### Element Variables
-
-- React Element를 변수처럼 다루는 방법
-
-### Inline Conditions
-
-- 조건문을 코드 안(in line)에 집어넣는 것
-
-### Inline If
-
-- &&연산자로 if문을 대체한다
-    - true조건문 && true조건문 일때만 true를 반환한다
-    
-    - unreadMessages.length가 0보다 크면 true임으로 뒤의 것도 실행시킨다
-    - 만약 false라면 뒤의 것은 읽지도 않고 바로 false처리한다
-
-    
-    - 단 count의 값인 0은 그대로 들어가 출력이 된다
-
-### Inline If-Else
-
-- 조건문에 값에 따라서 다른 element를 보여줄 때 사용
-- 삼항 연산자를 사용
-
-
-- true일 경우 logout버튼을 출력한다
-
-### Component 렌더링 막기
-
-- null을 리턴하면 렌더링하지 않는다
-
-# List and Keys
-
-### List
-
-- 같은 아이템을 순서대로 모아놓은 것
-
-### Array
-
-- List를 위해 사용하는 자료구조
-- JS의 변수나 객체들을 하나의 변수로 묶어 놓은 것
-
-### Key
-
-- key는 각 객체나 아이템을 구분할 수 있는 고유한 값을 의미
-- List에 있는 아이템들을 구분하기 위한 고유한 문자열
-    - 같은 List에 있는 Elements 사이에서만 고유한 값이면 된다
-- key 값으로는 id나 index(고유한 id가 없을 경우) 등이 사용된다
-- ex) 민증번호, 학번 등
-
-### 여러 개의 Component 렌더링 하기
-
-- 배열과 key를 이용해 반복되는 다수의 element를 렌더링 할 수 있다
-
-### map
-
-- 한쪽에 있는 아이템과 다른 쪽의 아이템을 짝 지어줌
-
-```jsx
-const doubled = numbers.map((number) => number *2);
-```
-
-- number의 배열에 있는 각 숫자에 2를 곱한 값이 들어간 doubled라는 배열을 생성하는 코드
-- 배열의 첫번째 아이템부터 어떠한 아이템을 연산한 뒤 배열을 만들어 돌려준다
-
-- number의 숫자를 하나씩 li태그 안에 넣어 listItems로 돌려준다
-
-```jsx
-...
- map((number, index) =>
-<li key={index}>
-	{number}
-<li>
-```
-
-- map 함수 안에 있는 elements는 꼭 key가 필요하다
-
-### 다양한 표기법들
-1. 카멜(Camel)케이스
-- 첫 번째 단어는 소문자, 그 다음 단어부터는 대문자를 사용
-ex) getMathScore
-2. 파스칼(Pascal) 케이스
-- 카멜 표기법과 달리, 첫 번째 단어부터 대문자
-ex) CommonUtil
-3. 스네이크(snake) 케이스
-- 단어 사이에 언더바를 넣음
-ex) total_number
-### 삼항 연산자
-    html조건식 ? 반환값1 : 반환값2
-조건식이 true면 반환값 1을 반환, 조건식이 false면 반환값 2을 반환
