@@ -245,3 +245,53 @@ state 와 관련된 모든 로직은 소스코드를 통해 명확하게 확인�
 eslint-plugin-react-hooks.
 
 리액트 컴포넌트가 hook 규칙을 따르는지 확인해줌.
+
+# Event Handling
+
+### Event
+
+이벤트란 사건이다.
+
+사용자가 버튼을 클릭하는 사건,
+
+이벤트 처리 → 이벤트 핸들링
+
+### 이벤트 처리
+
+```jsx
+//DOM
+<button onclick="activate()">
+	Activate
+</button>
+
+//React
+<button onClick={activate}>
+	Activate
+</button>
+```
+
+차이점:
+
+문자열 전달, 카멜 표기법
+
+### Event Handler, EventListener
+
+어떤 사건이 발생하면 사건을 처리함
+
+클래스 컴포넌트에서의 사용법 3가지
+
+- bind 사용
+- Class fields syntax 사용
+- Arrow function 사용
+  - 추가적인 렌더링 발생 가능 권장x
+
+함수 컴포넌트에서의 사용법
+
+- 함수 안에 함수로 정의
+- Arrow function 사용
+
+### Argument 전달
+
+Event Handler에 전달한 데이터.
+
+매개변수 parameter
